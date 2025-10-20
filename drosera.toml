@@ -1,0 +1,20 @@
+nano drosera.toml
+# Paste the TOML configuration below into the nano editor, then save (Ctrl+X, Y, Enter).
+
+ethereum_rpc = "https://rpc.hoodi.ethpandaops.io"
+drosera_rpc = "https://relay.hoodi.drosera.io"
+eth_chain_id = 560048
+drosera_address = "0x91cB447BaFc6e0EA0F4Fe056F5a9b1F14bb06e5D"
+
+[traps]
+
+[traps.transaction_fee_spike_trap]
+path = "out/TransactionFeeSpikeTrap.sol/TransactionFeeSpikeTrap.json"
+response_contract = "0x43329D47583850CDCed008E26204a1f8339A9C85"
+response_function = "respondCallback(uint256)"
+cooldown_period_blocks = 33
+min_number_of_operators = 1
+max_number_of_operators = 2
+block_sample_size = 10
+private_trap = true
+whitelist = ["0xf9f83d025f0BF92003d5919fdD3b6e4fD7Ae8b42"]
